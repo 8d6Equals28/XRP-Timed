@@ -21,7 +21,8 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
-  private final XRPDrivetrain m_drivetrain = new XRPDrivetrain();
+  private final XRPMotor leftDrive = new XRPMotor(0);
+  private final XRPMotor rightDrive = new XRPMotor(1);
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -58,8 +59,6 @@ public class Robot extends TimedRobot {
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);
-
-    m_drivetrain.resetEncoders();
   }
 
   /** This function is called periodically during autonomous. */
