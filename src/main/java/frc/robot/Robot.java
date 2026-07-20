@@ -70,6 +70,8 @@ public class Robot extends TimedRobot {
         break;
       case kDefaultAuto:
       default:
+        leftDrive.set(.3);
+        rightDrive.set(.3);
         // Put default auto code here
         break;
     }
