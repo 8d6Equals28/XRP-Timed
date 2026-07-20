@@ -9,6 +9,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import edu.wpi.first.wpilibj.xrp.XRPMotor;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.Timer;
+
 
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
@@ -23,6 +26,9 @@ public class Robot extends TimedRobot {
 
   private final XRPMotor leftDrive = new XRPMotor(0);
   private final XRPMotor rightDrive = new XRPMotor(1);
+  private final DifferentialDrive drive = new DifferentialDrive(leftDrive, rightDrive);
+
+  private final Timer timer = new Timer();
 
   /**
    * This function is run when the robot is first started up and should be used for any
