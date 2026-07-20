@@ -67,6 +67,9 @@ public class Robot extends TimedRobot {
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     System.out.println("Auto selected: " + m_autoSelected);
+
+    timer.start();
+    timer.reset();
   }
 
   /** This function is called periodically during autonomous. */
@@ -78,9 +81,15 @@ public class Robot extends TimedRobot {
         break;
       case kDefaultAuto:
       default:
-        leftDrive.set(.6);
-        rightDrive.set(.6);
         // Put default auto code here
+        //leftDrive.set(.6);
+        //rightDrive.set(.6);
+        if (timer.get() < 1) {
+          drive.tankDrive(0.6, 0.6);
+        }
+        else {
+          drive.tankDrive(0, 0);
+        }
         break;
     }
   }
