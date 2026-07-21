@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.xrp.XRPMotor;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.Timer;
 
+import edu.wpi.first.wpilibj.PS5Controller;
 
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
