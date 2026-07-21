@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.xrp.XRPMotor;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.Timer;
-
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.PS5Controller;
 
 /**
@@ -30,6 +30,8 @@ public class Robot extends TimedRobot {
   private final DifferentialDrive drive = new DifferentialDrive(leftDrive, rightDrive);
 
   private final Timer timer = new Timer();
+
+  private final PS5Controller controller = new PS5Controller(0);
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -94,11 +96,15 @@ public class Robot extends TimedRobot {
 
   /** This function is called once when teleop is enabled. */
   @Override
-  public void teleopInit() {}
+  public void teleopInit() {
+
+  }
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    drive.tankDrive(-controller.getLeftY(), -controller.getRightY());
+  }
 
   /** This function is called once when the robot is disabled. */
   @Override
