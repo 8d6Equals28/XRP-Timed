@@ -103,7 +103,8 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    drive.tankDrive(-controller.getLeftY(), -controller.getRightY());
+    //drive.tankDrive(-controller.getLeftY(), -controller.getRightY());
+    drive.arcadeDrive(-controller.getLeftY(), -controller.getRightX());
   }
 
   /** This function is called once when the robot is disabled. */
