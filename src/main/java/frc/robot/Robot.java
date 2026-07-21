@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import edu.wpi.first.wpilibj.xrp.XRPMotor;
-import edu.wpi.first.wpilibj.xrp.XRPServo;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.Timer;
 
@@ -27,7 +26,6 @@ public class Robot extends TimedRobot {
 
   private final XRPMotor leftDrive = new XRPMotor(0);
   private final XRPMotor rightDrive = new XRPMotor(1);
-  private final XRPServo servo1 = new XRPServo(1);
   private final DifferentialDrive drive = new DifferentialDrive(leftDrive, rightDrive);
 
   private final Timer timer = new Timer();
@@ -86,11 +84,8 @@ public class Robot extends TimedRobot {
         // Put default auto code here
         //leftDrive.set(.6);
         //rightDrive.set(.6);
-        if (timer.get() < 1) {
-          drive.tankDrive(0.6, 0.6);
-        }
-        else {
-          drive.tankDrive(0, 0);
+        if (timer.get()<2) {
+          drive.tankDrive(0.7, 0.7);
         }
         break;
     }
